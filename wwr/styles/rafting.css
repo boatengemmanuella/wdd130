@@ -28,6 +28,10 @@ body {
     background-color: var(--accent2-color);
 }
 
+header nav a:hover {
+    color: var(--secondary-color);
+}
+
 /* =========================
    PAGE WIDTH & CENTERING
 ========================= */
