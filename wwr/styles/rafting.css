@@ -1,5 +1,5 @@
 /* =========================
-   CSS VARIABLES (COLOR SCHEME)
+   VARIABLES
 ========================= */
 :root {
     --primary-color: #1e6091;
@@ -10,27 +10,21 @@
     --body-font: "Arial", sans-serif;
 }
 
-/* =========================
-   CSS RESET
-========================= */
+/* RESET */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* =========================
-   BODY STYLING
-========================= */
+/* BODY */
 body {
     font-family: var(--body-font);
     color: var(--accent1-color);
     background-color: var(--accent2-color);
 }
 
-/* =========================
-   PAGE WIDTH & CENTERING
-========================= */
+/* LAYOUT WIDTH */
 header,
 main,
 footer {
@@ -38,20 +32,11 @@ footer {
     margin: 0 auto;
 }
 
-/* =========================
-   HEADINGS
-========================= */
+/* HEADINGS */
 h1,
 h2 {
     font-family: var(--heading-font);
     color: var(--primary-color);
-}
-
-/* =========================
-   GENERAL SPACING
-========================= */
-section {
-    padding: 20px;
 }
 
 /* =========================
@@ -61,11 +46,10 @@ section {
     display: grid;
     grid-template-columns: 120px 1fr;
     align-items: center;
-    padding: 15px 20px;
+    padding: 15px;
     background-color: var(--secondary-color);
 }
 
-/* LOGO */
 .logo {
     width: 100px;
 }
@@ -83,25 +67,21 @@ section {
 .main-nav a {
     text-decoration: none;
     color: var(--accent2-color);
-    font-weight: bold;
     padding: 6px 12px;
-    transition: all 0.3s ease;
+    transition: 0.3s;
 }
 
-/* HOVER EFFECT */
 .main-nav a:hover {
     background-color: var(--primary-color);
-    color: var(--accent2-color);
     border-radius: 5px;
 }
 
-/* ACTIVE LINK */
 .main-nav a.active {
     border-bottom: 2px solid var(--accent2-color);
 }
 
 /* =========================
-   HERO SECTION
+   HERO
 ========================= */
 .hero {
     position: relative;
@@ -112,41 +92,39 @@ section {
     display: block;
 }
 
-/* HERO TITLE */
 .hero h1 {
     position: absolute;
     top: 20px;
     width: 100%;
     text-align: center;
-    padding: 15px;
-    background-color: rgba(24, 78, 119, 0.8);
-    color: white;
+    background-color: rgba(2, 57, 77, 0.8);
+    color: var(--accent2-color);
+    padding: 10px;
 }
 
-/* HERO ARTICLE */
 .hero article {
     position: absolute;
     bottom: 20px;
     left: 20px;
     right: 20px;
     background-color: rgba(255, 255, 255, 0.9);
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    padding: 15px;
+    padding: 10px;
 }
 
-/* ARTICLE IMAGE */
+/* REQUIRED FLOAT */
 .hero article img {
+    float: right;
     width: 120px;
+    margin-left: 10px;
     border-radius: 8px;
 }
 
 /* =========================
-   HISTORY SECTION (GRID)
+   HISTORY
 ========================= */
 .history {
     text-align: center;
+    padding: 20px;
 }
 
 .history-content {
@@ -162,10 +140,11 @@ section {
 }
 
 /* =========================
-   ADVENTURES SECTION (FLEX)
+   ADVENTURES
 ========================= */
 .adventures {
     text-align: center;
+    padding: 20px;
 }
 
 .adventure-gallery {
@@ -175,7 +154,6 @@ section {
 
 .adventure-gallery figure {
     flex: 1;
-    text-align: center;
 }
 
 .adventure-gallery img {
@@ -185,7 +163,6 @@ section {
 
 .adventure-gallery figcaption {
     margin-top: 5px;
-    font-size: 14px;
     font-weight: bold;
 }
 
@@ -196,12 +173,11 @@ section {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 15px 20px;
     background-color: var(--secondary-color);
     color: var(--accent2-color);
+    padding: 10px;
 }
 
-/* SOCIAL MEDIA */
 .socialmedia {
     display: flex;
     gap: 10px;
@@ -209,20 +185,4 @@ section {
 
 .socialmedia img {
     width: 30px;
-}
-
-.hero article {
-    position: absolute;
-    bottom: 20px;
-    left: 20px;
-    right: 20px;
-    background: rgba(255, 255, 255, 0.9);
-    padding: 10px;
-}
-
-.hero article img {
-    float: right;
-    width: 120px;
-    margin-left: 10px;
-    border-radius: 8px;
 }
