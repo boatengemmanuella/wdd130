@@ -210,3 +210,19 @@ section {
 .socialmedia img {
     width: 30px;
 }
+
+.hero article {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    right: 20px;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 10px;
+}
+
+.hero article img {
+    float: right;
+    width: 120px;
+    margin-left: 10px;
+    border-radius: 8px;
+}
