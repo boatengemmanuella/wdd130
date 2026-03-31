@@ -28,17 +28,13 @@ body {
     background-color: var(--accent2-color);
 }
 
-header nav a:hover {
-    color: var(--secondary-color);
-}
-
 /* =========================
    PAGE WIDTH & CENTERING
 ========================= */
 header,
 main,
 footer {
-    width: 840px;
+    max-width: 840px;
     margin: 0 auto;
 }
 
@@ -54,32 +50,54 @@ h2 {
 /* =========================
    GENERAL SPACING
 ========================= */
-nav,
-p,
-section,
-article {
-    margin: 16px;
-    padding: 8px;
+section {
+    padding: 20px;
 }
 
 /* =========================
-   HEADER & NAVIGATION
+   HEADER (GRID)
 ========================= */
-header {
-    display: flex;
-    justify-content: space-between;
+.site-header {
+    display: grid;
+    grid-template-columns: 120px 1fr;
     align-items: center;
+    padding: 15px 20px;
+    background-color: var(--secondary-color);
 }
 
-header img {
+/* LOGO */
+.logo {
     width: 100px;
 }
 
-nav a {
-    margin: 0 10px;
+/* =========================
+   NAVIGATION (FLEX + HOVER)
+========================= */
+.main-nav ul {
+    display: flex;
+    justify-content: flex-end;
+    list-style: none;
+    gap: 20px;
+}
+
+.main-nav a {
     text-decoration: none;
-    color: var(--primary-color);
+    color: var(--accent2-color);
     font-weight: bold;
+    padding: 6px 12px;
+    transition: all 0.3s ease;
+}
+
+/* HOVER EFFECT */
+.main-nav a:hover {
+    background-color: var(--primary-color);
+    color: var(--accent2-color);
+    border-radius: 5px;
+}
+
+/* ACTIVE LINK */
+.main-nav a.active {
+    border-bottom: 2px solid var(--accent2-color);
 }
 
 /* =========================
@@ -89,57 +107,106 @@ nav a {
     position: relative;
 }
 
-/* Hero Image */
 .hero img {
-    display: block;
     width: 100%;
-    height: auto;
+    display: block;
 }
 
-/* Hero Heading Overlay */
+/* HERO TITLE */
 .hero h1 {
     position: absolute;
     top: 20px;
     width: 100%;
-    padding: 16px;
     text-align: center;
-    opacity: 0.7;
-    background-color: var(--accent1-color);
-    color: #ffffff;
+    padding: 15px;
+    background-color: rgba(24, 78, 119, 0.8);
+    color: white;
 }
 
-/* Hero Article Overlay */
+/* HERO ARTICLE */
 .hero article {
     position: absolute;
     bottom: 20px;
     left: 20px;
     right: 20px;
-    background-color: rgba(255, 255, 255, 0.85);
+    background-color: rgba(255, 255, 255, 0.9);
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 15px;
 }
 
-/* Article Image */
+/* ARTICLE IMAGE */
 .hero article img {
-    float: right;
-    width: 125px;
-    margin-left: 10px;
+    width: 120px;
     border-radius: 8px;
+}
+
+/* =========================
+   HISTORY SECTION (GRID)
+========================= */
+.history {
+    text-align: center;
+}
+
+.history-content {
+    display: grid;
+    grid-template-columns: 1fr 200px 1fr;
+    gap: 20px;
+    align-items: center;
+}
+
+.history-content img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+/* =========================
+   ADVENTURES SECTION (FLEX)
+========================= */
+.adventures {
+    text-align: center;
+}
+
+.adventure-gallery {
+    display: flex;
+    gap: 10px;
+}
+
+.adventure-gallery figure {
+    flex: 1;
+    text-align: center;
+}
+
+.adventure-gallery img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.adventure-gallery figcaption {
+    margin-top: 5px;
+    font-size: 14px;
+    font-weight: bold;
 }
 
 /* =========================
    FOOTER
 ========================= */
-footer {
-    text-align: center;
-    margin-top: 20px;
+.site-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    background-color: var(--secondary-color);
+    color: var(--accent2-color);
 }
 
-/* Social Media Links */
-.socialmedia a {
-    text-decoration: none;
+/* SOCIAL MEDIA */
+.socialmedia {
+    display: flex;
+    gap: 10px;
 }
 
-/* Social Icons */
 .socialmedia img {
     width: 30px;
-    margin: 5px;
 }
