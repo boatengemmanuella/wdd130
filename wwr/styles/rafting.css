@@ -6,13 +6,12 @@
     --secondary-color: #02394d;
     --accent1-color: #184e77;
     --accent2-color: #ffffff;
-
     --heading-font: "Georgia", serif;
     --body-font: "Arial", sans-serif;
 }
 
 /* =========================
-   RESET
+   RESET & BASE STYLES
 ========================= */
 * {
     margin: 0;
@@ -20,216 +19,75 @@
     box-sizing: border-box;
 }
 
-/* =========================
-   BODY
-========================= */
 body {
     font-family: var(--body-font);
     color: var(--accent1-color);
     background-color: var(--accent2-color);
+    line-height: 1.6;
 }
 
-/* =========================
-   PAGE WIDTH
-========================= */
+/* Layout Containers */
 header,
 main,
 footer {
-    width: 840px;
+    max-width: 840px;
+    /* Changed to max-width for better responsiveness */
     margin: 0 auto;
 }
 
-/* =========================
-   HEADINGS
-========================= */
+/* Headings */
 h1,
 h2 {
     font-family: var(--heading-font);
     color: var(--primary-color);
+    margin-bottom: 1rem;
 }
 
 /* =========================
-   SPACING
-========================= */
-nav,
-p,
-section,
-article {
-    margin: 16px;
-    padding: 8px;
-}
-
-/* =========================
-   HEADER (GRID)
+   HEADER & NAVIGATION
 ========================= */
 header {
-    display: grid;
-    grid-template-columns: auto 1fr;
+    display: flex;
+    justify-content: space-between;
     align-items: center;
     background-color: var(--secondary-color);
-    padding: 10px;
+    padding: 10px 20px;
 }
 
-header img {
+header img.logo {
     width: 100px;
 }
 
-/* =========================
-   NAV (FLEX)
-========================= */
-nav {
+.main-nav {
     display: flex;
-    justify-content: flex-end;
 }
 
-nav a {
-    margin: 0 15px;
+.main-nav a {
     text-decoration: none;
-    color: white;
-    font-weight: bold;
-}
-
-nav a:hover {
     color: var(--accent2-color);
+    /* Fixed contrast: White text on dark blue */
+    font-weight: bold;
+    padding: 5px 15px;
+    transition: all 0.3s ease;
+}
+
+.main-nav a:hover {
+    background-color: var(--primary-color);
+    border-radius: 5px;
+}
+
+.main-nav a.active {
+    border-bottom: 2px solid var(--accent2-color);
 }
 
 /* =========================
-   HERO
+   CONTACT PAGE GRID
 ========================= */
-.hero {
-    position: relative;
-}
-
-.hero img {
-    display: block;
-    width: 100%;
-    height: auto;
-}
-
-.hero h1 {
-    position: absolute;
-    top: 20px;
-    width: 100%;
-    padding: 16px;
-    text-align: center;
-    opacity: 0.8;
-    background-color: var(--accent1-color);
-    color: white;
-}
-
-.hero article {
-    position: absolute;
-    bottom: 20px;
-    left: 20px;
-    right: 20px;
-    background-color: rgba(255, 255, 255, 0.85);
-}
-
-.hero article img {
-    float: right;
-    width: 125px;
-    margin-left: 10px;
-    margin-bottom: 5px;
-    border-radius: 8px;
-}
-
-/* =========================
-   HISTORY (GRID LAYOUT)
-========================= */
-.history-content {
-    display: grid;
-    grid-template-columns: 1fr auto 1fr;
-    align-items: center;
-}
-
-.history-content img {
-    width: 200px;
-    margin: 0 10px;
-}
-
-/* =========================
-   ADVENTURE SECTION
-========================= */
-.adventure-gallery {
-    display: flex;
-    justify-content: space-between;
-}
-
-.adventure-gallery figure {
-    text-align: center;
-}
-
-.adventure-gallery img {
-    width: 150px;
-    height: auto;
-}
-
-/* =========================
-   FOOTER
-========================= */
-footer {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-top: 20px;
-    padding: 10px;
-    background-color: var(--secondary-color);
-    color: white;
-}
-
-/* Social media */
-.socialmedia {
-    display: flex;
-}
-
-.socialmedia a {
-    text-decoration: none;
-}
-
-.socialmedia img {
-    width: 30px;
-    margin-left: 10px;
-}
-
-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: var(--secondary-color);
-    /* ✅ now used */
-}
-
 .contact-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 40px;
     padding: 20px;
-}
-
-.map-box {
-    width: 100%;
-    aspect-ratio: 1 / 1;
-    background-color: #eee;
-    border: 1px solid #ccc;
-}
-
-.radio-group,
-.full-width,
-.submit-btn {
-    grid-column: 2;
-}
-
-.contact-form input,
-.contact-form textarea {
-    border: 1px solid #777;
-    padding: 5px;
-}
-
-.contact-form form {
-    display: grid;
-    grid-template-columns: 100px 1fr;
-    gap: 15px;
-    align-items: start;
 }
 
 .map-frame {
@@ -239,27 +97,17 @@ header {
     display: block;
 }
 
-.map-frame:hover {
-    background-color: #005fa3;
+/* Form Styling */
+.contact-form form {
+    display: grid;
+    grid-template-columns: 120px 1fr;
+    /* Slightly wider for labels */
+    gap: 15px;
+    align-items: start;
 }
 
-.map-container:hover {
-    background-color: #005fa3;
-}
-
-.map-container {
-    border: 1px solid #333;
-    background-color: #eee;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.radio-group,
-.message-area,
-.newsletter-row,
-.submit-row {
-    grid-column: 2;
+.contact-form label {
+    font-weight: bold;
 }
 
 .contact-form input[type="text"],
@@ -268,13 +116,28 @@ header {
     width: 100%;
     padding: 8px;
     border: 1px solid #777;
+    border-radius: 4px;
 }
 
-.radio-group label {
-    display: block;
-    font-weight: normal;
+/* Spanning the second column for larger elements */
+fieldset,
+.newsletter-row,
+.submit-btn {
+    grid-column: 2;
 }
 
+fieldset {
+    border: none;
+    padding: 0;
+    margin: 10px 0;
+}
+
+legend {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+/* Button Styling */
 button[type="submit"] {
     width: 100%;
     padding: 0.8rem;
@@ -285,20 +148,16 @@ button[type="submit"] {
     border: none;
     border-radius: 4px;
     cursor: pointer;
+    transition: background 0.3s;
 }
 
 button[type="submit"]:hover {
     background-color: #005fa3;
 }
 
-.service-section {
-    background-color: #f3f3f3;
-    border: 1px solid #000;
-    margin: 20px;
-    padding: 20px;
-    text-align: center;
-}
-
+/* =========================
+   EMPLOYEE SECTION
+========================= */
 .employees {
     background-color: #f3f3f3;
     border: 1px solid #333;
@@ -312,77 +171,45 @@ button[type="submit"]:hover {
 
 .employees h2 {
     grid-column: 1 / span 3;
-    margin-bottom: 20px;
 }
 
 .employees figure img {
     width: 120px;
     height: 120px;
     object-fit: cover;
-    background-color: #ccc;
     border-radius: 50%;
     border: 2px solid #777;
     padding: 5px;
     margin-bottom: 10px;
 }
 
-.employees-container {
-    background-color: #f3f3f3;
-    border: 1px solid #000;
-    margin: 20px;
-    padding: 20px;
-    text-align: center;
-}
-
 .employees figcaption {
     font-weight: bold;
-    font-size: 0.9rem;
 }
 
-.employee-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    margin-top: 20px;
-}
-
-.employee-grid figure img {
-    width: 100px;
-    height: 100px;
-    background-color: #ccc;
-    border-radius: 50%;
-}
-
-.site-footer {
+/* =========================
+   FOOTER
+========================= */
+footer {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: var(--secondary-color);
-    color: var(--accent2-color);
     padding: 20px;
-    border: 1px solid #000;
+    background-color: var(--secondary-color);
+    color: white;
+    margin-top: 20px;
 }
 
-header nav a:hover {
-    color: var(--secondary-color);
+.socialmedia {
+    display: flex;
+    gap: 15px;
 }
 
-/* NAV LINK HOVER EFFECT */
-.main-nav a {
-    text-decoration: none;
-    color: var(--accent2-color);
-    font-weight: bold;
-    padding: 5px 10px;
-    transition: all 0.3s ease;
+.socialmedia img {
+    width: 30px;
+    transition: transform 0.2s;
 }
 
-/* HOVER */
-.main-nav a:hover {
-    color: var(--accent2-color);
-    background-color: var(--primary-color);
-    border-radius: 5px;
-}
-
-/* ACTIVE PAGE (optional but nice) */
-.main-nav a.active {
-    border-bottom: 2px solid var(--accent2-color);
+.socialmedia img:hover {
+    transform: scale(1.1);
 }
