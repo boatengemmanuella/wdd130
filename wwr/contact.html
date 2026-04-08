@@ -4,11 +4,11 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Contact Us | Down the River</title>
+    <title>Contact Us | The Rapids</title>
 
     <meta name="description"
       content="Contact White Water Rafting Adventures for reservations, general inquiries, and trip information. Find our address, phone number, map, and contact form here.">
-    <meta name="author" content="Godfred Osei">
+    <meta name="author" content="Emmanuella Gyamfuaa Boateng">
 
     <link rel="stylesheet" href="styles/rafting.css" />
 </head>
@@ -16,26 +16,27 @@
 <body>
 
     <header class="site-header">
-        <img class="logo" src="images/logo.png" alt="Down the River Logo" />
+        <img class="logo" src="images/logo.png" alt="The Rapids Logo" />
         <nav class="main-nav">
             <a href="index.html">Home</a>
-            <a href="about.html" class="active">About Us</a>
+            <a href="about.html">About Us</a>
             <a href="trips.html">Trips</a>
             <a href="contact.html" class="active">Contact Us</a>
         </nav>
     </header>
 
     <main class="Contact-page">
-        <h1>Contact Down the River Rafting</h1>
+        <h1>Contact The Rapids</h1>
 
         <div class="contact-grid">
             <section class="company-info">
                 <h2>Our Location</h2>
                 <p>233 Nawuni Road, Kumasi, Ghana</p>
                 <p>+233 50 504 1123</p>
-                <p>info@downtheriver.com</p>
+                <p>info@therapids.com</p>
 
-                <iframe class="map-frame" src="https://www.google.com/maps/embed?pb=..."
+                <iframe class="map-frame"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3962.611111111111!2d-1.6111111!3d6.6111111!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNsKwMzYnNDAuMCJOIDHCsDM2JzQwLjAiVw!5e0!3m2!1sen!2sgh!4v1234567890"
                   allowfullscreen="" loading="lazy">
                 </iframe>
             </section>
@@ -49,22 +50,25 @@
                     <label for="user-email">Email Address</label>
                     <input type="email" id="user-email" name="user-email" required>
 
-                    <p>Purpose of Message</p>
-                    <div class="radio-group">
-                        <div class="radio-item">
-                            <input type="radio" id="general" name="purpose" value="general"
-                              required>
-                            <label for="general">General Inquiry</label>
+                    <fieldset>
+                        <legend>Purpose of Message</legend>
+                        <div class="radio-group">
+                            <div class="radio-item">
+                                <input type="radio" id="general" name="purpose" value="general"
+                                  required>
+                                <label for="general">General Inquiry</label>
+                            </div>
+                            <div class="radio-item">
+                                <input type="radio" id="reservation" name="purpose"
+                                  value="reservation">
+                                <label for="reservation">Reservation Question</label>
+                            </div>
+                            <div class="radio-item">
+                                <input type="radio" id="website" name="purpose" value="website">
+                                <label for="website">Website Suggestion</label>
+                            </div>
                         </div>
-                        <div class="radio-item">
-                            <input type="radio" id="reservation" name="purpose" value="reservation">
-                            <label for="reservation">Reservation Question</label>
-                        </div>
-                        <div class="radio-item">
-                            <input type="radio" id="website" name="purpose" value="website">
-                            <label for="website">Website Suggestion</label>
-                        </div>
-                    </div>
+                    </fieldset>
 
                     <label for="message">Message</label>
                     <textarea id="message" name="message" rows="5" required></textarea>
@@ -82,15 +86,15 @@
         <section class="employees">
             <h2>Meet Our Team</h2>
             <figure>
-                <img src="images/brock.jpg" alt="Brock">
+                <img src="images/brock.jpg" alt="Brock - Senior River Guide">
                 <figcaption>Brock</figcaption>
             </figure>
             <figure>
-                <img src="images/claire.jpg" alt="Claire">
+                <img src="images/claire.jpg" alt="Claire - Safety Coordinator">
                 <figcaption>Claire</figcaption>
             </figure>
             <figure>
-                <img src="images/bradley.jpg" alt="Bradley">
+                <img src="images/bradley.jpg" alt="Bradley - Expedition Leader">
                 <figcaption>Bradley</figcaption>
             </figure>
         </section>
