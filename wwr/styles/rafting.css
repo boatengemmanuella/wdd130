@@ -1,6 +1,3 @@
-/* =========================
-   CSS VARIABLES
-========================= */
 :root {
     --primary-color: #1e6091;
     --secondary-color: #02394d;
@@ -10,9 +7,6 @@
     --body-font: "Arial", sans-serif;
 }
 
-/* =========================
-   RESET & BASE STYLES
-========================= */
 * {
     margin: 0;
     padding: 0;
@@ -22,72 +16,109 @@
 body {
     font-family: var(--body-font);
     color: var(--accent1-color);
-    background-color: var(--accent2-color);
     line-height: 1.6;
 }
 
-/* Layout Containers */
 header,
 main,
 footer {
     max-width: 840px;
-    /* Changed to max-width for better responsiveness */
     margin: 0 auto;
 }
 
-/* Headings */
 h1,
 h2 {
     font-family: var(--heading-font);
     color: var(--primary-color);
-    margin-bottom: 1rem;
 }
 
-/* =========================
-   HEADER & NAVIGATION
-========================= */
-header {
+.site-header {
+    background-color: var(--secondary-color);
+    padding: 20px 40px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: var(--secondary-color);
-    padding: 10px 20px;
+    border: 1px solid #000;
 }
 
-header img.logo {
-    width: 100px;
+.logo-box {
+    width: 150px;
+    height: 120px;
+    background-color: #e0e0e0;
+    border: 1px solid #999;
 }
 
 .main-nav {
     display: flex;
+    list-style: none;
+}
+
+.main-nav ul {
+    display: flex;
+    list-style: none;
+}
+
+.main-nav li {
+    background-color: #fff;
+    border: 1px solid #000;
+    margin-left: -1px;
 }
 
 .main-nav a {
+    background-color: #fff;
+    border: 1px solid #000;
+    padding: 8px 20px;
+    margin-left: -1px;
+    color: #000;
     text-decoration: none;
-    color: var(--accent2-color);
-    /* Fixed contrast: White text on dark blue */
-    font-weight: bold;
-    padding: 5px 15px;
-    transition: all 0.3s ease;
+    font-weight: normal;
 }
 
 .main-nav a:hover {
-    background-color: var(--primary-color);
-    border-radius: 5px;
+    background-color: #005fa3;
 }
 
-.main-nav a.active {
-    border-bottom: 2px solid var(--accent2-color);
+h1 {
+    text-align: center;
+    margin: 30px 0;
 }
 
-/* =========================
-   CONTACT PAGE GRID
-========================= */
+.company-info {
+    text-align: center;
+    margin: 30px 0;
+}
+
 .contact-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 40px;
     padding: 20px;
+}
+
+.map-box {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    background-color: #eee;
+    border: 1px solid #ccc;
+}
+
+.radio-group,
+.full-width,
+.submit-btn {
+    grid-column: 2;
+}
+
+.contact-form input,
+.contact-form textarea {
+    border: 1px solid #777;
+    padding: 5px;
+}
+
+.contact-form form {
+    display: grid;
+    grid-template-columns: 100px 1fr;
+    gap: 15px;
+    align-items: start;
 }
 
 .map-frame {
@@ -97,17 +128,27 @@ header img.logo {
     display: block;
 }
 
-/* Form Styling */
-.contact-form form {
-    display: grid;
-    grid-template-columns: 120px 1fr;
-    /* Slightly wider for labels */
-    gap: 15px;
-    align-items: start;
+.map-frame:hover {
+    background-color: #005fa3;
 }
 
-.contact-form label {
-    font-weight: bold;
+.map-container:hover {
+    background-color: #005fa3;
+}
+
+.map-container {
+    border: 1px solid #333;
+    background-color: #eee;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.radio-group,
+.message-area,
+.newsletter-row,
+.submit-row {
+    grid-column: 2;
 }
 
 .contact-form input[type="text"],
@@ -116,28 +157,13 @@ header img.logo {
     width: 100%;
     padding: 8px;
     border: 1px solid #777;
-    border-radius: 4px;
 }
 
-/* Spanning the second column for larger elements */
-fieldset,
-.newsletter-row,
-.submit-btn {
-    grid-column: 2;
+.radio-group label {
+    display: block;
+    font-weight: normal;
 }
 
-fieldset {
-    border: none;
-    padding: 0;
-    margin: 10px 0;
-}
-
-legend {
-    font-weight: bold;
-    margin-bottom: 5px;
-}
-
-/* Button Styling */
 button[type="submit"] {
     width: 100%;
     padding: 0.8rem;
@@ -148,16 +174,20 @@ button[type="submit"] {
     border: none;
     border-radius: 4px;
     cursor: pointer;
-    transition: background 0.3s;
 }
 
 button[type="submit"]:hover {
     background-color: #005fa3;
 }
 
-/* =========================
-   EMPLOYEE SECTION
-========================= */
+.service-section {
+    background-color: #f3f3f3;
+    border: 1px solid #000;
+    margin: 20px;
+    padding: 20px;
+    text-align: center;
+}
+
 .employees {
     background-color: #f3f3f3;
     border: 1px solid #333;
@@ -171,33 +201,54 @@ button[type="submit"]:hover {
 
 .employees h2 {
     grid-column: 1 / span 3;
+    margin-bottom: 20px;
 }
 
 .employees figure img {
     width: 120px;
     height: 120px;
     object-fit: cover;
+    background-color: #ccc;
     border-radius: 50%;
     border: 2px solid #777;
     padding: 5px;
     margin-bottom: 10px;
 }
 
-.employees figcaption {
-    font-weight: bold;
+.employees-container {
+    background-color: #f3f3f3;
+    border: 1px solid #000;
+    margin: 20px;
+    padding: 20px;
+    text-align: center;
 }
 
-/* =========================
-   FOOTER
-========================= */
-footer {
+.employees figcaption {
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+
+.employee-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    margin-top: 20px;
+}
+
+.employee-grid figure img {
+    width: 100px;
+    height: 100px;
+    background-color: #ccc;
+    border-radius: 50%;
+}
+
+.site-footer {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px;
     background-color: var(--secondary-color);
-    color: white;
-    margin-top: 20px;
+    color: var(--accent2-color);
+    padding: 20px;
+    border: 1px solid #000;
 }
 
 .socialmedia {
@@ -207,9 +258,218 @@ footer {
 
 .socialmedia img {
     width: 30px;
-    transition: transform 0.2s;
 }
 
-.socialmedia img:hover {
-    transform: scale(1.1);
+.hero {
+    position: relative;
+    text-align: center;
+    color: white;
+}
+
+.hero-img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.hero-msg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0.6, 0.6, 0.6, 0.6);
+    padding: 20px;
+}
+
+/* Home Grid Content */
+.home-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    padding: 40px;
+}
+
+/* Trips Table */
+table {
+    width: 80%;
+    margin: 20px auto;
+    border-collapse: collapse;
+}
+
+th,
+td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: center;
+}
+
+th {
+    background-color: #333;
+    color: white;
+}
+
+/* Trip Description Grid */
+.trip-descriptions {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    padding: 20px;
+}
+
+.trip-item img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+}
+
+/* Container for the Grid Items */
+.home-grid {
+    display: flex;
+    flex-wrap: wrap;
+    /* Allows cards to wrap to the next line on small screens */
+    justify-content: center;
+    /* Centers cards horizontally */
+    gap: 30px;
+    /* Space between cards */
+    padding: 40px 20px;
+    background-color: #ffffff;
+}
+
+/* Individual Card Styling */
+.grid-item {
+    flex: 1 1 300px;
+    /* Grow, shrink, and set base width of 300px */
+    max-width: 350px;
+    /* Prevents cards from getting too wide */
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    /* Subtle shadow like your image */
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    /* Left-align text to match the reference */
+}
+
+.grid-item img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    /* Ensures images fill the space without stretching */
+}
+
+/* Internal padding for card content */
+.grid-item h3,
+.grid-item p {
+    padding: 0 20px;
+}
+
+.grid-item h3 {
+    margin-top: 20px;
+    font-size: 1.5rem;
+    color: var(--secondary-color);
+}
+
+.grid-item p {
+    margin-bottom: 25px;
+    color: #555;
+}
+
+/* History Section: Two-column layout */
+.history-layout {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    padding: 20px;
+    background-color: #f9f9f9;
+}
+
+.history-layout p {
+    flex: 1;
+}
+
+.history-layout img {
+    flex: 1;
+    max-width: 400px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Adventure Gallery: Flexible Grid */
+.adventure-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 40px 0;
+}
+
+.adventure-gallery figure {
+    flex: 1 1 200px;
+    /* Cards will be at least 200px wide */
+    max-width: 250px;
+    text-align: center;
+    background: white;
+    padding: 10px;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.adventure-gallery img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+.adventure-gallery figcaption {
+    font-weight: bold;
+    color: var(--secondary-color);
+    font-family: var(--heading-font);
+}
+
+/* Shared Hero Styling for all pages */
+.hero {
+    position: relative;
+    /* Container for absolute text */
+    width: 100%;
+    overflow: hidden;
+    /* This ensures the hero height is consistent across pages */
+    max-height: 600px;
+}
+
+.hero-img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+    /* Keeps image from stretching */
+}
+
+.hero-msg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(2, 57, 77, 0.8);
+    /* Using your secondary color */
+    color: white;
+    padding: 2rem;
+    text-align: center;
+    width: 80%;
+    border-radius: 8px;
+}
+
+/* Specific styling for the hero text */
+.hero-msg h1 {
+    color: white;
+    margin: 10px 0;
+    font-size: 3rem;
+}
+
+.hero-msg span {
+    color: #ff7d31;
+    /* Accent color for the text span */
 }
